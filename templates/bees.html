@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        {% for bee in bees %}
+            <a href="{% url 'update_bee' bee.id %}">
+                <li> {{ bee.name }} (code: {{ bee.code }})</li>
+            </a>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_bee' %}">
+        <button>
+            <i class="fa fa-plus-square fa-2x" aria-hidden="true"></i>
+        </button></a>
+
+    </form>
+</body>
+</html>

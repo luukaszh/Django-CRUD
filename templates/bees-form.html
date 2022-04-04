@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>New/Update product</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button>
+            <i class="fa fa-database fa-lg" aria-hidden="true"></i>
+        </button>
+    </form>
+
+    <pre>{{value}}</pre>
+
+    {% if bee %}
+        <a href="{% url 'delete_bee' bee.id %}">
+            <button>
+                <i class="fa fa-window-close fa-lg" aria-hidden="true"></i>
+            </button></a>
+    {% endif %}
+
+
+    <a href="{% url 'list_bees' %}">
+            <button>
+                <i class="fa fa-backward fa-lg" aria-hidden="true"></i>
+            </button></a>
+</body>
+</html>
